@@ -42,7 +42,7 @@ class About extends React.Component {
    }
    componentDidMount(){
      getUserInfo().then((x) => {
-       console.log(x.gitInfo);
+      //  console.log(x.gitInfo);
        this.setState({
          info:x.gitInfo,
          wait:false

@@ -26,6 +26,11 @@ class NavBar extends React.Component {
       },
       menu:{
         textAlign:'center'
+      },
+      link:{
+         textDecoration:'none',
+         display:'block',
+         color:'#333'
       }
     }
     return(
@@ -38,9 +43,15 @@ class NavBar extends React.Component {
         >
           <p style={styles.title}>好多视频网</p>
           <div style={styles.menu}>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to="/">首页</Link></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to="blog">博客</Link></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to="about">关于</Link></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}>
+              <Link to="/" activeStyle={{color: '#E91E63'}} style={styles.link} onlyActiveOnIndex={true}>首页</Link>
+            </MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}>
+              <Link to="blog" activeStyle={{color: '#E91E63'}} style={styles.link}>博客</Link>
+            </MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}>
+              <Link to="about" activeStyle={{color: '#E91E63'}} style={styles.link}>关于</Link>
+            </MenuItem>
           </div>
         </Drawer>
       </div>
