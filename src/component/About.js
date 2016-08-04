@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import CircularProgress from 'material-ui/CircularProgress';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import getUserInfo from './gitSearch';
 
 
@@ -10,26 +11,36 @@ class About extends React.Component {
          listStyle: 'none',
          margin: '0 auto',
          lineHight:'20px',
+         overflow:'hidden',
+         paddingBottom:'30px'
        },
        li:{
           float: 'left',
           width:'33.3%',
           textAlign:'center',
-          color:''
+          color:'#00BCD4',
+          fontSize:'24px',
+          opacity:'0.7'
        },
        span:{
          display:'block',
+         color:'#405658',
 
        },
        img:{
          display:'block',
          margin:'0px auto',
-         width:'20%',
-         padding:'50px 0'
+         padding:'50px',
+         width:'35%',
        },
        loading:{
          paddingTop:'100px',
          margin:'0 auto',width:'100px',height:'100px'
+       },
+       card:{
+         width:'80%',
+         margin:'50px auto',
+
        }
      }
    }
@@ -42,7 +53,7 @@ class About extends React.Component {
    }
    componentDidMount(){
      getUserInfo().then((x) => {
-      //  console.log(x.gitInfo);
+       console.log(x.gitInfo);
        this.setState({
          info:x.gitInfo,
          wait:false
@@ -53,15 +64,15 @@ class About extends React.Component {
      const styles = this.getStyles();
      let x = <div style={styles.loading}><CircularProgress size={1.5} /></div>;
      let y =
-       <div>
-         <img src={this.state.info.avatar_url} style={styles.img}/>
-         <ul style={styles.list}>
-           <li style={styles.li}><span style={styles.span}>user</span>{this.state.info.login}</li>
-           <li style={styles.li}><span style={styles.span}>followers</span>{this.state.info.followers}</li>
-           <li style={styles.li}><span style={styles.span}>following</span>{this.state.info.following}</li>
-         </ul>
+       <Card style={styles.card}>
+        <img src={this.state.info.avatar_url} style={styles.img}/>
+        <ul style={styles.list}>
+          <li style={styles.li}>{this.state.info.login}<span style={styles.span}>userName</span></li>
+          <li style={styles.li}>{this.state.info.followers}<span style={styles.span}>followers</span></li>
+          <li style={styles.li}>{this.state.info.following}<span style={styles.span}>following</span></li>
+        </ul>
 
-       </div>;
+      </Card>;
      return(
        <div>
          {
