@@ -5,7 +5,6 @@ class Header extends React.Component {
   getStyles() {
     return {
       root: {
-
         color: '#fff',
         backgroundColor: '#00bcd4',
         textAlign:'center',

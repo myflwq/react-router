@@ -11,28 +11,11 @@ class Search extends React.Component {
   render () {
     // console.log(this.props.handleSearch);
     let styles={
-      root:{
-        padding:'50px 10px'
-      },
-      title:{
-        color:'#fff',
-        fontSize:'48px',
-        fontWeight:'400',
-        textAlign:'center'
-      },
-      span:{
-        backgroundColor:'#000',
-        position:'relative'
-      },
       searchBtn:{
         color:'#fff',
         position:'absolute',
         bottom:'-5px',
         right:'10px'
-      },
-      search:{
-        marginTop:'20px',
-        textAlign:'center',
       },
       text:{
         width:'60%',
@@ -51,10 +34,10 @@ class Search extends React.Component {
       }
     }
     return(
-      <div style={styles.root}>
-        <h1 style={styles.title}>ALL</h1>
-        <div style={styles.search} className="clearfix">
-          <span style={styles.span}><SearchBtn style={styles.searchBtn}/></span>
+      <div className="search">
+        <h1 >ALL</h1>
+        <div className="clearfix line">
+          <span ><SearchBtn style={styles.searchBtn}/></span>
           <TextField
             hintText="搜索"
             underlineFocusStyle={styles.underlineStyle}

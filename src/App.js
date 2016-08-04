@@ -29,11 +29,11 @@ class App extends React.Component {
       }
     }
     return(
-      <div>
-        <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
-          <MenuButton  color='#fff'/>
-        </IconButton>
-        <NavBar ref='navbar'/>
+      <div >
+          <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
+            <MenuButton  color='#fff'/>
+          </IconButton>
+          <NavBar ref='navbar'/>
         {this.props.children}
       </div>
     )

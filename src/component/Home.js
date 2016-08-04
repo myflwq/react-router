@@ -6,7 +6,7 @@ class Home extends React.Component {
        root:{
         width:'100vw',
         height:'100vh',
-        background: 'url("http://7xopqp.com1.z0.glb.clouddn.com/newming24.jpg") no-repeat fixed center center/cover',
+        background: 'url("http://img2.niutuku.com/desk/1207/0852/ntk49327.jpg") no-repeat fixed center center/cover',
         textAlign:'center',
         color:'#fff',
         paddingTop:'45vh',
