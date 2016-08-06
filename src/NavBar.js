@@ -41,16 +41,19 @@ class NavBar extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <p style={styles.title}>好多视频网</p>
+          <p style={styles.title}>My Blog</p>
           <div style={styles.menu}>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="/" activeStyle={{color: '#E91E63'}} style={styles.link} onlyActiveOnIndex={true}>首页</Link>
+              <Link to="/" activeStyle={{color: '#E91E63'}} style={styles.link} onlyActiveOnIndex={true}>HOME</Link>
             </MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="blog" activeStyle={{color: '#E91E63'}} style={styles.link}>博客</Link>
+              <Link to="blog" activeStyle={{color: '#E91E63'}} style={styles.link}>BLOG</Link>
             </MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="about" activeStyle={{color: '#E91E63'}} style={styles.link}>关于</Link>
+              <Link to="account" activeStyle={{color: '#E91E63'}} style={styles.link}>ACCOUNT</Link>
+            </MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}>
+              <Link to="about" activeStyle={{color: '#E91E63'}} style={styles.link}>ABOUT</Link>
             </MenuItem>
           </div>
         </Drawer>

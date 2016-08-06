@@ -27,6 +27,26 @@ ul {
   list-style-type: none;
 }
 
+.home{
+  width:100vw;
+  height:100vh;
+  background: url("http://img2.niutuku.com/desk/1207/0852/ntk49327.jpg") no-repeat fixed center center/cover;
+  text-align:center;
+  color:#fff;
+  padding-top:33vh;
+  font-size:30px;
+}
+.home .text{
+  background-color: rgba(0,0,0,0.2);
+  padding: 10vh 0;
+  text-align: center;
+
+}
+.home span{
+  color:#83EFEF;
+
+}
+
 
 .account {
   flex-grow: 1;
@@ -36,10 +56,17 @@ ul {
 }
 .account .content {
   max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 15vh;
+}
+.account #echarts{
+  max-width: 700px;
   margin: 20px auto;
   padding: 40px;
+  width: 90%;
+  height: 500px;
 }
-
 .account .user-info img {
   display: block;
   width: 100px;
@@ -53,23 +80,47 @@ ul {
   text-align: center;
   width: 100%;
 }
-.account .user-info ul li {
+.account .user-info li {
   flex-grow: 1;
   border-left: 1px solid rgba(0,0,0,0.1);
 }
-.account .user-info ul li:first-child {
+.account .user-info li:first-child{
   border-left: none;
 }
-.account .user-info  span {
+.account .user-info li span {
   display: block;
   font-size: 14px;
 }
-.account .user-info  b {
+.account .user-info li b {
   display: block;
   font-size: 16px;
   margin-bottom: 10px;
 }
-
+.user-repos {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.user-repos li {
+  padding: 3vh 0;
+  line-height: 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.user-repos li div{
+  display: flex;
+  justify-content: space-between;
+}
+.user-repos li .name{
+  font-size: 16px;
+  font-weight: 500;
+  color: #00bcd4;
+}
+.user-repos li .desc{
+  font-size: 15px;
+}
+.user-repos li .lang{
+  font-size: 14px;
+}
 
 .search{
   padding:50px 10px;

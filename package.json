@@ -56,11 +56,12 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
-    "material-ui": "^0.15.2",
-    "react": "^15.3.0",
+    "echarts": "^3.2.2",
     "lodash": "^4.14.0",
-    "react-dom": "^15.3.0",
+    "material-ui": "^0.15.2",
     "radium": "^0.18.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
     "react-router": "^2.6.1",
     "react-tap-event-plugin": "^1.0.0"
   }
