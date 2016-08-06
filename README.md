@@ -10,3 +10,7 @@ activeStyle={{color: 'red'}}
 ```
 onlyActiveOnIndex={true}
 ```
+
+#### SPA
+
+单页面应用，为移动互联网时代而生，singl page application 单页面应用

@@ -11,11 +11,14 @@ class Home extends React.Component {
         color:'#fff',
         paddingTop:'45vh',
         fontSize:'30px'
+      },
+      span:{
+        color:'#2196F3'
       }
     }
     return(
       <div  style={styles.root}>
-      欢迎光临
+      欢迎光临<br /><span style={styles.span}>我的个人站</span>
       </div>
     )
   }
