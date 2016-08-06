@@ -18,6 +18,6 @@ class BlogCard extends Component {
 BlogCard.defaultProps={
   index:1,
   title:"red",
-  date:"red"
+  date:"2016.6.1"
 }
 export default Radium(BlogCard);

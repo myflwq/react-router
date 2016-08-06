@@ -1,32 +1,48 @@
 import React, { Component } from 'react';
 import map from 'lodash/fp/map';
 import BlogCard from './BlogCard.js';
+import axios from 'axios';
 
-let blogs = [
-  {index:'1', title:'HTML',date:'2016.7.19'},
-  {index:'2', title:'这是第二天',date:'2016.7.21'},
-  {index:'3', title:'这是第三天',date:'2016.7.22'},
-  {index:'4', title:'这是第四天',date:'2016.7.22'},
-  {index:'5', title:'这是第五天',date:'2016.7.22'},
-  {index:'6', title:'React',date:'2016.7.22'},
-  {index:'7', title:'JAVA',date:'2016.7.22'}
-]
 
 class List extends Component {
+  constructor(){
+    super();
+    this.state={
+      posts: ''
+    }
+  }
+  componentDidMount() {
+    axios.get('https://raw.githubusercontent.com/myflwq/react-router/master/posts/index.json')
+    .then((res) => {
+       this.setState({
+         posts: res.data
+       });
+    });
+  }
   render(){
+
   // console.log(Cards.length);
   // console.log(this.props.search);
+  let posts = this.state.posts
+  console.log(posts);
   var blogCards = [];
     if (this.props.search=='') {
-      map((b) => {blogCards.push(<BlogCard title={b.title} date={b.date} index={b.index} key={Math.random()}/>);},blogs);
+      map((b) =>  {
+                  blogCards.push(
+                    <BlogCard title={b.title} date={b.created_at } index={b.index} key={Math.random()}/>
+                  );
+                },
+        posts
+      );
     }else {
-      let query=new RegExp(this.props.search,"i");
-      for (var i = 0; i < blogs.length; i++) {
-        if (query.test(blogs[i].title)) {
-          blogCards.push(<BlogCard title={blogs[i].title} date={blogs[i].date} index={blogs[i].index} key={Math.random()}/>)
+        let query=new RegExp(this.props.search,"i");
+        for (var key in posts) {
+          if (query.test(posts[key].title)) {
+            console.log("aaaa");
+            blogCards.push(<BlogCard title={posts[key].title} date={posts[key].date} index={posts[key].index} key={Math.random()}/>)
+          }
         }
       }
-    }
     return(
       <div>
         {blogCards}
