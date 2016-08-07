@@ -29,11 +29,11 @@ ul {
 
 .home{
   width:100vw;
-  height:100vh;
+  height:90vh;
   background: url("http://img2.niutuku.com/desk/1207/0852/ntk49327.jpg") no-repeat fixed center center/cover;
   text-align:center;
   color:#fff;
-  padding-top:33vh;
+  padding-top:25vh;
   font-size:30px;
 }
 .home .text{

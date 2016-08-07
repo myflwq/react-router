@@ -30,7 +30,7 @@ class App extends React.Component {
     }
     return(
       <div >
-        <div style={{backgroundColor:'rgb(0, 188, 212)',height:'68px'}}>
+        <div style={{backgroundColor:'rgb(0, 188, 212)',height:'10vh'}}>
           <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
             <MenuButton  color='#fff'/>
           </IconButton>
