@@ -58,6 +58,7 @@
   "dependencies": {
     "echarts": "^3.2.2",
     "lodash": "^4.14.0",
+    "marked": "^0.3.6",
     "material-ui": "^0.15.2",
     "radium": "^0.18.1",
     "react": "^15.3.0",

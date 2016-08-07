@@ -9,7 +9,6 @@ class About extends React.Component {
   getStyles() {
      return {
        loading:{
-
          margin:'0 auto',width:'130px',
          height:'200px'
        }
