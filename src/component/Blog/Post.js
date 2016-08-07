@@ -12,7 +12,7 @@ class Post extends React.Component {
     }
   }
   componentDidMount() {
-    axios.get(`https://raw.githubusercontent.com/happypeter/big-demo/master/posts/${this.props.params.title}.md`)
+    axios.get(`https://raw.githubusercontent.com/myflwq/react-router/master/posts/${this.props.params.title}.md`)
     .then((res) => {
       // console.log(res);
        this.setState({
@@ -31,7 +31,6 @@ class Post extends React.Component {
     return(
       <div>
       {this.state.wait ? x : y}
-      {this.props.params.title}
       </div>
     )
   }
