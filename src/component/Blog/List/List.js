@@ -42,7 +42,7 @@ class List extends Component {
       if (this.props.search=='') {
         map((b) =>  {
                     blogCards.push(
-                      <BlogCard title={b.title} date={b.created_at } index={b.index} key={Math.random()}/>
+                      <BlogCard title={b.title} date={b.created_at } index={b.index} url={b.name} key={Math.random()}/>
                     );
                   },
           posts
@@ -52,7 +52,7 @@ class List extends Component {
           for (var key in posts) {
             if (query.test(posts[key].title)) {
               console.log("aaaa");
-              blogCards.push(<BlogCard title={posts[key].title} date={posts[key].date} index={posts[key].index} key={Math.random()}/>)
+              blogCards.push(<BlogCard title={posts[key].title} date={posts[key].date} index={posts[key].index} url={posts[key].name} key={Math.random()}/>)
             }
           }
         }

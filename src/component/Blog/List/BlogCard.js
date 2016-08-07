@@ -4,9 +4,10 @@ import {hashHistory} from 'react-router';
 
 class BlogCard extends Component {
   handleClick(){
-    hashHistory.push('blog/ssss')
+    hashHistory.push(`blog/${this.props.url}`);
   }
   render(){
+    console.log(this.props.url);
     return (
           <div  className="list" onClick={this.handleClick.bind(this)}>
             <div className="left">{this.props.index}</div>

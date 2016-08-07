@@ -12,9 +12,9 @@ class Post extends React.Component {
     }
   }
   componentDidMount() {
-    axios.get('https://raw.githubusercontent.com/happypeter/big-demo/master/posts/git-tips.md')
+    axios.get(`https://raw.githubusercontent.com/happypeter/big-demo/master/posts/${this.props.params.title}.md`)
     .then((res) => {
-      console.log(res);
+      // console.log(res);
        this.setState({
          posts: res.data,
          wait:false
