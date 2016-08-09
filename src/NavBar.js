@@ -39,7 +39,8 @@ class NavBar extends React.Component {
         lineHeight:'64px',
         textAlign:'center',
         backgroundColor:'#00BCD4',
-        marginBottom:'20px'
+        marginBottom:'20px',
+        marginTop:'0'
       },
       menu:{
         textAlign:'center'
