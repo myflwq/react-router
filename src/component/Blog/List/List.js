@@ -14,7 +14,7 @@ class List extends Component {
     }
   }
   componentDidMount() {
-    axios.get('https://raw.githubusercontent.com/myflwq/react-router/master/posts/index.json')
+    axios.get('https://raw.githubusercontent.com/myflwq/react-router/master/posts/index.json?v=${Math.random()}')
     .then((res) => {
        this.setState({
          posts: res.data,
@@ -42,7 +42,7 @@ class List extends Component {
       if (this.props.search=='') {
         map((b) =>  {
                     blogCards.push(
-                      <BlogCard title={b.title} date={b.created_at } index={b.index} url={b.name} key={Math.random()}/>
+                      <BlogCard title={b.title} date={b.date } index={b.index} url={b.name} key={Math.random()}/>
                     );
                   },
           posts

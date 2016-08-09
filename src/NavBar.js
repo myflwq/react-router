@@ -6,13 +6,30 @@ import { Link } from 'react-router';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      open: false,
+      title:''
+    };
   }
   handleToggle(){
     this.setState({open: !this.state.open});
   }
   handleClose(){
     this.setState({open: false});
+  }
+  componentWillReceiveProps() {
+     this.setNavState();
+  }
+  componentDidMount(){
+    this.setNavState();
+  }
+  setNavState(){
+    this.setState({
+      title:this.context.router.isActive('/', true) ? 'HOME' :
+        this.context.router.isActive('/blog')? 'BLOG' :
+        this.context.router.isActive('/account')? 'ACCOUNT' :
+        this.context.router.isActive('/about')? 'ABOUT' : 'HOME'
+    });
   }
   render () {
     let styles={
@@ -33,6 +50,7 @@ class NavBar extends React.Component {
          color:'#333'
       }
     }
+
     return(
       <div>
         <Drawer
@@ -41,7 +59,7 @@ class NavBar extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <p style={styles.title}>My Blog</p>
+          <p style={styles.title}>{this.state.title}</p>
           <div style={styles.menu}>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
               <Link to="/" activeStyle={{color: '#E91E63'}} style={styles.link} onlyActiveOnIndex={true}>HOME</Link>
@@ -61,5 +79,7 @@ class NavBar extends React.Component {
     )
   }
 }
-
+NavBar.contextTypes = {
+  router:React.PropTypes.object.isRequired
+}
 export default NavBar;

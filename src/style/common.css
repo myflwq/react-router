@@ -143,6 +143,7 @@ ul {
 
 
 .list{
+  cursor:pointer;
   width:95%;
   max-width:850px;
   margin:20px auto;
@@ -175,4 +176,10 @@ ul {
   background-color:#fff;
   border-color:#D1DCE0;
   padding-top:25px;
+}
+
+
+.post{
+  width: 90%;
+  margin: 0 auto;
 }

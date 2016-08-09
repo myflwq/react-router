@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import axios from 'axios';
 import marked from 'marked';
+import hljs from 'highlight.js';
 import CircularProgress from 'material-ui/CircularProgress';
 
 class Post extends React.Component {
@@ -12,7 +13,7 @@ class Post extends React.Component {
     }
   }
   componentDidMount() {
-    axios.get(`https://raw.githubusercontent.com/myflwq/react-router/master/posts/${this.props.params.title}.md`)
+    axios.get(`https://raw.githubusercontent.com/myflwq/react-router/master/posts/${this.props.params.title}.md?v=${Math.random()}`)
     .then((res) => {
       // console.log(res);
        this.setState({
@@ -22,6 +23,11 @@ class Post extends React.Component {
     });
   }
   render () {
+    marked.setOptions({
+      highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
       let x = <div><p>正在加载......</p><CircularProgress size={1.5} /></div>;
       let y = <div
               dangerouslySetInnerHTML={{
@@ -29,7 +35,7 @@ class Post extends React.Component {
           }}
         />
     return(
-      <div>
+      <div className = "post">
       {this.state.wait ? x : y}
       </div>
     )

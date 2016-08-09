@@ -1,6 +1,13 @@
 let option = {}
 option = {
     color: ['#3398DB'],
+    title:{
+      left: 'center',
+      text:'个人技能展示',
+      textStyle : {
+        color: '#3398DB',
+      }
+    },
     tooltip : {
         trigger: 'axis',
         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -16,7 +23,7 @@ option = {
     xAxis : [
         {
             type : 'category',
-            data : ['PS', 'React', 'H5', 'CSS3', 'JS', 'Ajax', 'Sun'],
+            data : ['PS', 'React', 'H5', 'CSS3', 'JS', 'Ajax'],
             axisTick: {
                 alignWithLabel: true
             }
@@ -24,6 +31,7 @@ option = {
     ],
     yAxis : [
         {
+            max :'100',
             type : 'value'
         }
     ],
@@ -32,7 +40,7 @@ option = {
             name:'掌握程度',
             type:'bar',
             barWidth: '60%',
-            data:[30, 52, 200, 334, 390, 330, 220]
+            data:[50, 75, 90, 85, 85, 80]
         }
     ]
 };

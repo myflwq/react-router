@@ -47,3 +47,27 @@ npm i --save marked
 ```
 #### hashHistory引入BlogCard.js 应用push方法
 跳转路径的功能
+```
+handleClick(){
+  hashHistory.push(`blog/${this.props.url}`);
+}
+```
+也可以用context推送路由,上下文推送
+
+```
+BlogCard.contextTypes = {
+  router:React.PropTypes.object.isRequired
+}
+
+handleClick(){
+    this.context.router.push(`blog/${this.props.url}`);
+}
+```
+
+### 获取当前路径来更改当前显示内容
+
+```
+组件名.contextTypes = {
+  router:React.PropTypes.object.isRequired
+}
+```

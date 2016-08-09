@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "echarts": "^3.2.2",
+    "highlight.js": "^9.5.0",
     "lodash": "^4.14.0",
     "marked": "^0.3.6",
     "material-ui": "^0.15.2",

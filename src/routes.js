@@ -12,7 +12,7 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="about" component={About} />
-        <Route path="account" component={Account} />
+    <Route path="account" component={Account} />
     <Route path="blog" component={Blog} />
     <Route path="blog/:title" component={Post} />
 
