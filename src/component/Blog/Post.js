@@ -28,7 +28,7 @@ class Post extends React.Component {
         return hljs.highlightAuto(code).value;
       }
     });
-      let x = <div><p>正在加载......</p><CircularProgress size={1.5} /></div>;
+      let x = <div style={{margin:'0 auto',width:'130px',height:'200px'}}><p>正在加载......</p><CircularProgress size={1.5} /></div>;
       let y = <div
               dangerouslySetInnerHTML={{
             __html: marked(this.state.posts)

@@ -6,14 +6,6 @@ import echarts from 'echarts';
 import option from './About/Echarts';
 
 class About extends React.Component {
-  getStyles() {
-     return {
-       loading:{
-         margin:'0 auto',width:'130px',
-         height:'200px'
-       }
-     }
-   }
    constructor(){
      super();
      this.state={
@@ -33,11 +25,10 @@ class About extends React.Component {
     myChart.setOption(option)
    }
    render () {
-     const styles = this.getStyles();
-     let x = <div style={styles.loading}><p>正在从GitHub上获取数据......</p><CircularProgress size={1.5} /></div>;
+     let x = <div className="loading"><p>正在从GitHub上获取数据......</p><CircularProgress size={1.5} /></div>;
      let y =
      <div className='user-info'>
-       <img src={this.state.info.avatar_url} style={styles.img}/>
+       <img src={this.state.info.avatar_url}/>
        <ul >
          <li ><b>{this.state.info.login}</b><span >userName</span></li>
          <li ><b>{this.state.info.followers}</b><span >followers</span></li>

@@ -10,7 +10,7 @@ class BlogCard extends Component {
       this.context.router.push(`blog/${this.props.url}`);
   }
   render(){
-    console.log(this.context.router);
+    // console.log(this.context.router);
     return (
           <div  className="list" onClick={this.handleClick.bind(this)}>
             <div className="left">{this.props.index}</div>

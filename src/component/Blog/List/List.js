@@ -22,18 +22,8 @@ class List extends Component {
        });
     });
   }
-  getStyles() {
-     return {
-       loading:{
-         margin:'0 auto',
-         width:'130px',
-         height:'200px'
-       }
-     }
-   }
   render(){
-    const styles = this.getStyles();
-    let x = <div style={styles.loading}><p>正在获取数据......</p><CircularProgress size={1.5} /></div>;
+    let x = <div className="loading"><p>正在获取数据......</p><CircularProgress size={1.5} /></div>;
   // console.log(Cards.length);
   // console.log(this.props.search);
     let posts = this.state.posts
