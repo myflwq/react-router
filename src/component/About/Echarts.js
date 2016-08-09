@@ -32,7 +32,12 @@ option = {
     yAxis : [
         {
             max :'100',
-            type : 'value'
+            type : 'value',
+            name:'百分数(%)',
+            nameTextStyle:{
+              color:'#2196F3',
+              fontSize:'16'
+            }
         }
     ],
     series : [
